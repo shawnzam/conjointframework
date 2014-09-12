@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  c_attribute_id: 
+  display_order: 1
+  description: MyText
+  choice_id: 
+
+two:
+  name: MyString
+  c_attribute_id: 
+  display_order: 1
+  description: MyText
+  choice_id: 
