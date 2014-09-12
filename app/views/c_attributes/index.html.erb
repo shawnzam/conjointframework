@@ -1,31 +1,40 @@
-<h1>Listing c_attributes</h1>
-
-<table>
+<%- model_class = CAttribute -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => CAttribute %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Display order</th>
-      <th>Choice set</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:display_order) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @c_attributes.each do |c_attribute| %>
       <tr>
+        <td><%= c_attribute.id %></td>
         <td><%= c_attribute.display_order %></td>
-        <td><%= c_attribute.choice_set %></td>
         <td><%= c_attribute.name %></td>
         <td><%= c_attribute.description %></td>
-        <td><%= link_to 'Show', c_attribute %></td>
-        <td><%= link_to 'Edit', edit_c_attribute_path(c_attribute) %></td>
-        <td><%= link_to 'Destroy', c_attribute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l c_attribute.created_at, format: :long %></td>
+        <td>
+          <%= link_to c_attribute_path(c_attribute), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to c_attribute_path(c_attribute), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New C attribute', new_c_attribute_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_c_attribute_path,
+            :class => 'btn btn-primary' %>

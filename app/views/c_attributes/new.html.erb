@@ -1,5 +1,6 @@
-<h1>New c_attribute</h1>
+<%- model_class = CAttribute -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => CAttribute %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', c_attributes_path %>

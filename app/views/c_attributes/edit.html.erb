@@ -1,6 +1,5 @@
-<h1>Editing c_attribute</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @c_attribute %> |
-<%= link_to 'Back', c_attributes_path %>
+<%- model_class = CAttribute -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => CAttribute %></h1>
+</div>
+<%= render :partial => 'form' %>
