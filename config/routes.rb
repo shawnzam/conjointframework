@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :choice_rows
+
   resources :choice_sets
 
   resources :choices
