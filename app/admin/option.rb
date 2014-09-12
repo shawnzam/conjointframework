@@ -1,4 +1,5 @@
 ActiveAdmin.register Option do
+  permit_params :name, :display_order, :description
 
 
   # See permitted parameters documentation:
