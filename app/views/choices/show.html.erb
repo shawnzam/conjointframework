@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Choice row:</strong>
+  <%= @choice.choice_row %>
+</p>
+
+<p>
+  <strong>Display order:</strong>
+  <%= @choice.display_order %>
+</p>
+
+<%= link_to 'Edit', edit_choice_path(@choice) %> |
+<%= link_to 'Back', choices_path %>
