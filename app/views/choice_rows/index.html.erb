@@ -1,27 +1,36 @@
-<h1>Listing choice_rows</h1>
-
-<table>
+<%- model_class = ChoiceRow -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => ChoiceRow %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Choice set</th>
-      <th>Display order</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:display_order) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @choice_rows.each do |choice_row| %>
       <tr>
-        <td><%= choice_row.choice_set %></td>
+        <td><%= choice_row.id %></td>
         <td><%= choice_row.display_order %></td>
-        <td><%= link_to 'Show', choice_row %></td>
-        <td><%= link_to 'Edit', edit_choice_row_path(choice_row) %></td>
-        <td><%= link_to 'Destroy', choice_row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l choice_row.created_at, format: :long %></td>
+        <td>
+          <%= link_to choice_row_path(choice_row), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to choice_row_path(choice_row), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Choice row', new_choice_row_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_choice_row_path,
+            :class => 'btn btn-primary' %>

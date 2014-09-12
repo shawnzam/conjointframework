@@ -1,5 +1,6 @@
-<h1>New choice_row</h1>
+<%- model_class = ChoiceRow -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => ChoiceRow %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', choice_rows_path %>

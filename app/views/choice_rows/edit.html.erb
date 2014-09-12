@@ -1,6 +1,5 @@
-<h1>Editing choice_row</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @choice_row %> |
-<%= link_to 'Back', choice_rows_path %>
+<%- model_class = ChoiceRow -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => ChoiceRow %></h1>
+</div>
+<%= render :partial => 'form' %>
