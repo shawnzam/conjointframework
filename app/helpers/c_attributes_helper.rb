@@ -1,0 +1,2 @@
+module CAttributesHelper
+end

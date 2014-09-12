@@ -1,0 +1,31 @@
+<h1>Listing c_attributes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Display order</th>
+      <th>Choice set</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @c_attributes.each do |c_attribute| %>
+      <tr>
+        <td><%= c_attribute.display_order %></td>
+        <td><%= c_attribute.choice_set %></td>
+        <td><%= c_attribute.name %></td>
+        <td><%= c_attribute.description %></td>
+        <td><%= link_to 'Show', c_attribute %></td>
+        <td><%= link_to 'Edit', edit_c_attribute_path(c_attribute) %></td>
+        <td><%= link_to 'Destroy', c_attribute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New C attribute', new_c_attribute_path %>

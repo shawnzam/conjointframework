@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Display order:</strong>
+  <%= @c_attribute.display_order %>
+</p>
+
+<p>
+  <strong>Choice set:</strong>
+  <%= @c_attribute.choice_set %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @c_attribute.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @c_attribute.description %>
+</p>
+
+<%= link_to 'Edit', edit_c_attribute_path(@c_attribute) %> |
+<%= link_to 'Back', c_attributes_path %>
