@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'staticpages/index'
+
   resources :c_attributes
 
   resources :options
