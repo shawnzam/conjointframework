@@ -1,4 +1,5 @@
 ActiveAdmin.register CAttribute do
+  permit_params :display_order, :name, :description
 
 
   # See permitted parameters documentation:
