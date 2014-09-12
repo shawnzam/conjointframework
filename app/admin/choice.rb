@@ -1,4 +1,5 @@
 ActiveAdmin.register Choice do
+  permit_params :display_order
 
 
   # See permitted parameters documentation:
